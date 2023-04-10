@@ -1,0 +1,29 @@
+.universalButton {
+  background-color: rgba(211, 13, 13, 0.74);
+  padding: 10px;
+  border: 1px solid rgba(30, 30, 30, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.universalButton:hover {
+  filter: brightness(0.8);
+}
+
+.universalButton::after {
+  background-color: rgba(30, 30, 30, 0.15);
+  border-radius: 4px;
+  content: attr(dataTitle);
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  padding: 5px 9px;
+  margin-top: 11px;
+  transition: all 0.3s ease-in-out;
+}
+
+.universalButton:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
