@@ -1,11 +1,43 @@
-.todoCart {
+.todoCard {
   background-color: rgba(156, 177, 39, 0.205);
   width: 340px;
   border: 1px solid rgba(30, 30, 30, 0.3);
   border-radius: 2px;
   margin: 10px auto;
-  padding: 6px;
-  text-indent: 20px;
+  padding: 9px;
   text-align: left;
   transition: 0.4s;
+  word-wrap: break-word;
+  font-weight: 100;
+  position: relative;
+}
+
+.cardText {
+  text-indent: 25px;
+}
+
+.journalIcon {
+  top: 11px;
+  position: absolute;
+}
+
+.trashIcon {
+  position: absolute;
+  right: 34px;
+  top: 11px;
+}
+
+.checkSquare {
+  position: absolute;
+  right: 9px;
+  top: 11px;
+}
+
+.icon {
+  transition: 0.3s;
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }

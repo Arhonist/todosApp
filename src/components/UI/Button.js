@@ -1,12 +1,12 @@
 import styles from './Button.module.css';
 
 function Button(props) {
-  const { children, onClickFn } = props;
+  const { children, onClickFn, datatitle } = props;
   return (
     <button
       onClick={onClickFn}
       className={styles.universalButton}
-      dataTitle="Reset todos"
+      datatitle={datatitle}
     >
       {children}
     </button>

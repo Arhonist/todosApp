@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 74%;
+}
+
+.mainHeader {
+  margin-top: 15px;
+  font-weight: 100;
+  font-size: 40px;
+}

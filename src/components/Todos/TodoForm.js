@@ -6,7 +6,10 @@ function TodoForm({ pushTodo }) {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (todo.trim() === '') return;
+    if (todo.trim() === '') {
+      alert('Enter non-empty todo!');
+      return;
+    }
     pushTodo(todo);
     setTodo('');
   }
