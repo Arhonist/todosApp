@@ -12,6 +12,11 @@
   position: relative;
 }
 
+.completed {
+  background-color: lightgreen;
+  text-decoration: line-through;
+}
+
 .cardText {
   text-indent: 25px;
 }

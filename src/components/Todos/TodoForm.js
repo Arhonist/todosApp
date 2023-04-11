@@ -2,16 +2,16 @@ import { useState } from 'react';
 import styles from './TodoForm.module.css';
 
 function TodoForm({ pushTodo }) {
-  const [todo, setTodo] = useState('');
+  const [todo, setTodo] = useState({ text: '', isCompleted: false });
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (todo.trim() === '') {
+    if (todo.text.trim() === '') {
       alert('Enter non-empty todo!');
       return;
     }
     pushTodo(todo);
-    setTodo('');
+    setTodo({ text: '', ...todo });
   }
 
   return (
@@ -20,9 +20,11 @@ function TodoForm({ pushTodo }) {
         <label>
           <input
             type="text"
-            value={todo}
+            value={todo.text}
             placeholder="Enter new todo"
-            onChange={(e) => setTodo(e.target.value)}
+            onChange={(e) =>
+              setTodo({ text: e.target.value, isCompleted: false })
+            }
           />
         </label>
         <button type="submit">Submit</button>

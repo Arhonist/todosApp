@@ -22,22 +22,19 @@ function App() {
 
   function deleteAllTodos() {
     setTodos([]);
+    setComplTodos([]);
   }
 
-  function setTodoAsCompl(todoIndex) {
-    let complTodosCopy = Object.assign([], complTodos);
-    complTodosCopy.push(todoIndex);
-    setComplTodos(complTodosCopy);
-  }
-
-  function setTodoAsUncompl(todoIndex) {
-    let todosCopy = Object.assign([], complTodos);
-    complTodos.splice(todoIndex, 1);
-    setComplTodos(complTodos);
+  function handleCompleteClick(todo) {
+    if (todo.isCompleted) {
+      todo.isCompleted = false;
+    } else {
+      todo.isCompleted = true;
+    }
   }
 
   function deleteComplTodos() {
-    complTodos.forEach((index) => deleteTodo(index));
+    setTodos(todos.filter((val, index) => !complTodos.includes(index)));
     setComplTodos([]);
   }
 
@@ -52,12 +49,13 @@ function App() {
             <TodoActions
               deleteAllTodos={deleteAllTodos}
               deleteComplTodos={deleteComplTodos}
-            />{' '}
+            />
+            {console.log(todos)}
             <TodoList
               todos={todos}
+              complTodos={complTodos}
               deleteTodo={deleteTodo}
-              setTodoAsCompl={setTodoAsCompl}
-              setTodoAsUncompl={setTodoAsUncompl}
+              handleCompleteClick={handleCompleteClick}
             />
             <p>You have {todos.length} todos in total!</p>
           </>

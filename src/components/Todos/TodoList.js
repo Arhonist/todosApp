@@ -1,10 +1,16 @@
 import Todo from './Todo';
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, complTodos, deleteTodo, handleCompleteClick }) {
   return (
     <>
-      {todos.map((text, index) => (
-        <Todo key={index} id={index} deleteTodo={deleteTodo} todoText={text} />
+      {todos.map((todo, index) => (
+        <Todo
+          key={index}
+          id={index}
+          deleteTodo={deleteTodo}
+          todo={todo}
+          handleCompleteClick={handleCompleteClick}
+        />
       ))}
     </>
   );
