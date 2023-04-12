@@ -12,6 +12,11 @@
   position: relative;
 }
 
+.todoCard:hover {
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.09),
+    0px 3px 19px rgba(51, 51, 51, 0.04);
+}
+
 .completed {
   background-color: lightgreen;
   text-decoration: line-through;
@@ -26,23 +31,20 @@
   position: absolute;
 }
 
-.trashIcon {
-  position: absolute;
-  right: 34px;
-  top: 11px;
-}
-
-.checkSquare {
-  position: absolute;
-  right: 9px;
-  top: 11px;
-}
-
 .icon {
+  float: right;
   transition: 0.3s;
+  z-index: 999;
+  margin-left: 7px;
 }
 
 .icon:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+@media (max-width: 486px) {
+  .todoCard {
+    width: 100%;
+  }
 }

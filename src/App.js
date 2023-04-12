@@ -6,7 +6,6 @@ import TodoList from './components/Todos/TodoList';
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [complTodos, setComplTodos] = useState([]);
 
   function pushTodo(todo) {
     let todosCopy = Object.assign([], todos);
@@ -22,21 +21,24 @@ function App() {
 
   function deleteAllTodos() {
     setTodos([]);
-    setComplTodos([]);
   }
 
-  function handleCompleteClick(todo) {
-    if (todo.isCompleted) {
-      todo.isCompleted = false;
+  function handleCompleteClick(todoIndex) {
+    const todosCopy = Object.assign([], todos);
+    const selectedTodo = todosCopy[todoIndex];
+    if (selectedTodo.isCompleted) {
+      selectedTodo.isCompleted = false;
     } else {
-      todo.isCompleted = true;
+      selectedTodo.isCompleted = true;
     }
+    setTodos(todosCopy);
   }
 
   function deleteComplTodos() {
-    setTodos(todos.filter((val, index) => !complTodos.includes(index)));
-    setComplTodos([]);
+    setTodos(todos.filter((todo) => !todo.isCompleted));
   }
+
+  const completedCount = todos.filter((todo) => todo.isCompleted).length;
 
   return (
     <div className={styles.App}>
@@ -50,14 +52,24 @@ function App() {
               deleteAllTodos={deleteAllTodos}
               deleteComplTodos={deleteComplTodos}
             />
-            {console.log(todos)}
+
             <TodoList
               todos={todos}
-              complTodos={complTodos}
               deleteTodo={deleteTodo}
               handleCompleteClick={handleCompleteClick}
             />
-            <p>You have {todos.length} todos in total!</p>
+            {completedCount ? (
+              <p>
+                You have completed {completedCount} todo
+                {completedCount === 1 ? ' ' : 's'} (
+                {((completedCount / todos.length) * 100).toFixed(0)}%)!
+              </p>
+            ) : (
+              <p>
+                You have {todos.length} todo{todos.length === 1 ? ' ' : 's'} in
+                total!
+              </p>
+            )}
           </>
         ) : (
           <p>Your Todo list is empty!</p>

@@ -11,7 +11,7 @@ function TodoForm({ pushTodo }) {
       return;
     }
     pushTodo(todo);
-    setTodo({ text: '', ...todo });
+    setTodo({ ...todo, text: '' });
   }
 
   return (
@@ -22,9 +22,7 @@ function TodoForm({ pushTodo }) {
             type="text"
             value={todo.text}
             placeholder="Enter new todo"
-            onChange={(e) =>
-              setTodo({ text: e.target.value, isCompleted: false })
-            }
+            onChange={(e) => setTodo({ ...todo, text: e.target.value })}
           />
         </label>
         <button type="submit">Submit</button>

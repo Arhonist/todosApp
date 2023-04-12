@@ -1,5 +1,5 @@
 .universalButton {
-  background-color: rgba(211, 13, 13, 0.74);
+  background-color: rgba(211, 13, 13, 0.64);
   padding: 10px;
   border: 1px solid rgba(30, 30, 30, 0.3);
   border-radius: 5px;
@@ -9,7 +9,7 @@
 }
 
 .universalButton:hover {
-  filter: brightness(0.8);
+  background-color: rgba(136, 11, 11, 0.64);
 }
 
 .universalButton::after {
@@ -22,9 +22,11 @@
   padding: 5px 9px;
   margin-top: 22px;
   transition: all 0.3s ease-in-out;
+  z-index: 999;
 }
 
 .universalButton:hover::after {
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
