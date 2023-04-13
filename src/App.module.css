@@ -23,8 +23,8 @@
 .lngButton {
   border: 1px solid rgba(30, 30, 30, 0.1);
   margin-left: 10px;
-  width: 40px;
-  height: 28px;
+  width: 30px;
+  height: 21px;
   transition: 0.3s;
 }
 
@@ -32,4 +32,25 @@
   cursor: pointer;
   box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.19),
     0px 3px 19px rgba(51, 51, 51, 0.04);
+}
+
+@media (max-width: 610px) {
+  .container {
+    position: unset;
+  }
+
+  .langChangerBlock {
+    position: absolute;
+    top: unset;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 408px) {
+  .mainHeader {
+    padding-top: 35px;
+    font-weight: 100;
+    font-size: 34px;
+  }
 }
