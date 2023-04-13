@@ -7,7 +7,7 @@ import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Suspense fallback={<div className="loading">Loading, please wait...</div>}>
+  <Suspense fallback={<div className="loading">Загрузка...</div>}>
     <App />
   </Suspense>
 );
