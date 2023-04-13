@@ -1,10 +1,12 @@
 import Button from '../UI/Button';
 import styles from './TodoActions.module.css';
+import { useTranslation } from 'react-i18next';
 
 function TodoActions({ deleteAllTodos, deleteComplTodos }) {
+  const { t } = useTranslation();
   return (
     <div className={styles.todoActionsBlock}>
-      <Button onClickFn={deleteAllTodos} datatitle="Delete all todos">
+      <Button onClickFn={deleteAllTodos} datatitle={t('deleteAll')}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -17,7 +19,7 @@ function TodoActions({ deleteAllTodos, deleteComplTodos }) {
         </svg>
       </Button>
 
-      <Button onClickFn={deleteComplTodos} datatitle="Delete completed todos">
+      <Button onClickFn={deleteComplTodos} datatitle={t('deleteCompleted')}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

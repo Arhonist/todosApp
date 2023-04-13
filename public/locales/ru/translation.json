@@ -1,0 +1,12 @@
+{
+  "mainHeader": "Твой список Дел.",
+  "inputPlaceholder": "Введи новое Дело",
+  "submitButton": "Добавить",
+  "deleteAll": "Удалить все Дела",
+  "deleteCompleted": "Удалить сделанные Дела",
+  "noTodos": "Твой список Дел пуст!",
+  "totalTodos": "Всего Дел: {{total}}",
+  "completedTodos": "Ты сделал {{completedCount}} дел ({{percentCompleted}}%)!",
+  "alertNotEmpty": "Введи непустое Дело!",
+  "emptyTodoList": "Твой список дел пуст!"
+}

@@ -1,0 +1,12 @@
+{
+  "mainHeader": "Your Todo list.",
+  "inputPlaceholder": "Enter new Todo",
+  "submitButton": "Submit",
+  "deleteAll": "Delete all Todos",
+  "deleteCompleted": "Delete all completed Todos",
+  "noTodos": "Your Todo list is empty!",
+  "totalTodos": "Total Todos: {{total}}",
+  "completedTodos": "You have completed {{completedCount}} todos ({{percentCompleted}}%)!",
+  "alertNotEmpty": "Enter non-empty Todo!",
+  "emptyTodoList": "Your Todo list is empty!"
+}

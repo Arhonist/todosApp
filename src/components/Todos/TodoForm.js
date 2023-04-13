@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import styles from './TodoForm.module.css';
+import { useTranslation } from 'react-i18next';
 
 function TodoForm({ pushTodo }) {
+  const { t } = useTranslation();
   const [todo, setTodo] = useState({ text: '', isCompleted: false });
 
   function handleFormSubmit(event) {
     event.preventDefault();
     if (todo.text.trim() === '') {
-      alert('Enter non-empty todo!');
+      alert(t('alertNotEmpty'));
       return;
     }
     pushTodo(todo);
@@ -21,11 +23,11 @@ function TodoForm({ pushTodo }) {
           <input
             type="text"
             value={todo.text}
-            placeholder="Enter new todo"
+            placeholder={t('inputPlaceholder')}
             onChange={(e) => setTodo({ ...todo, text: e.target.value })}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">{t('submitButton')}</button>
       </form>
     </>
   );
