@@ -6,7 +6,7 @@
   "deleteCompleted": "Удалить сделанные Дела",
   "noTodos": "Твой список Дел пуст!",
   "totalTodos": "Всего Дел: {{total}}",
-  "completedTodos": "Ты сделал {{completedCount}} дел ({{percentCompleted}}%)!",
+  "completedTodos": "Сделано дел: {{completedCount}} ({{percentCompleted}}%)!",
   "alertNotEmpty": "Введи непустое Дело!",
   "emptyTodoList": "Твой список дел пуст!"
 }
