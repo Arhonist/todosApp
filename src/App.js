@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './App.module.css';
 import TodoForm from './components/Todos/TodoForm/TodoForm';
 import TodoActions from './components/Todos/TodoActions/TodoActions';
 import TodoList from './components/Todos/TodoList/TodoList';
-import { useTranslation } from 'react-i18next';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -14,15 +14,11 @@ function App() {
   }
 
   function pushTodo(todo) {
-    let todosCopy = Object.assign([], todos);
-    todosCopy.push(todo);
-    setTodos(todosCopy);
+    setTodos([...todos, todo]);
   }
 
   function deleteTodo(todoIndex) {
-    let todosCopy = Object.assign([], todos);
-    todosCopy.splice(todoIndex, 1);
-    setTodos(todosCopy);
+    setTodos(todos.filter((_, index) => index !== todoIndex));
   }
 
   function deleteAllTodos() {
@@ -61,6 +57,7 @@ function App() {
               deleteTodo={deleteTodo}
               handleCompleteClick={handleCompleteClick}
             />
+
             {completedCount ? (
               <p>
                 {t('completedTodos', {

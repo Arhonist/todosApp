@@ -17,19 +17,17 @@ function TodoForm({ pushTodo }) {
   }
 
   return (
-    <>
-      <form className={styles.todoInputForm} onSubmit={handleFormSubmit}>
-        <label>
-          <input
-            type="text"
-            value={todo.text}
-            placeholder={t('inputPlaceholder')}
-            onChange={(e) => setTodo({ ...todo, text: e.target.value })}
-          />
-        </label>
-        <button type="submit">{t('submitButton')}</button>
-      </form>
-    </>
+    <form className={styles.todoInputForm} onSubmit={handleFormSubmit}>
+      <label>
+        <input
+          type="text"
+          value={todo.text}
+          placeholder={t('inputPlaceholder')}
+          onChange={(e) => setTodo({ ...todo, text: e.target.value })}
+        />
+      </label>
+      <button type="submit">{t('submitButton')}</button>
+    </form>
   );
 }
 
