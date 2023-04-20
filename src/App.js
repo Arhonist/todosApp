@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './App.module.css';
-import TodoForm from './components/Todos/TodoForm';
-import TodoActions from './components/Todos/TodoActions';
-import TodoList from './components/Todos/TodoList';
+import TodoForm from './components/Todos/TodoForm/TodoForm';
+import TodoActions from './components/Todos/TodoActions/TodoActions';
+import TodoList from './components/Todos/TodoList/TodoList';
 import { useTranslation } from 'react-i18next';
 
 function App() {
@@ -32,11 +32,7 @@ function App() {
   function handleCompleteClick(todoIndex) {
     const todosCopy = Object.assign([], todos);
     const selectedTodo = todosCopy[todoIndex];
-    if (selectedTodo.isCompleted) {
-      selectedTodo.isCompleted = false;
-    } else {
-      selectedTodo.isCompleted = true;
-    }
+    selectedTodo.isCompleted = !selectedTodo.isCompleted;
     setTodos(todosCopy);
   }
 

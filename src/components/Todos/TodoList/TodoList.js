@@ -1,6 +1,6 @@
-import Todo from './Todo';
+import Todo from '../Todo/Todo';
 
-function TodoList({ todos, complTodos, deleteTodo, handleCompleteClick }) {
+function TodoList({ todos, deleteTodo, handleCompleteClick }) {
   return (
     <>
       {todos.map((todo, index) => (
