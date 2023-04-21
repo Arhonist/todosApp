@@ -26,10 +26,13 @@ function App() {
   }
 
   function handleCompleteClick(todoIndex) {
-    const todosCopy = Object.assign([], todos);
-    const selectedTodo = todosCopy[todoIndex];
-    selectedTodo.isCompleted = !selectedTodo.isCompleted;
-    setTodos(todosCopy);
+    setTodos(
+      todos.map((todo, index) =>
+        index === todoIndex
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo }
+      )
+    );
   }
 
   function deleteComplTodos() {
