@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import styles from './App.module.css';
 import TodoForm from './components/Todos/TodoForm/TodoForm';
@@ -13,22 +14,27 @@ function App() {
     i18n.changeLanguage(language);
   }
 
-  function pushTodo(todo) {
-    setTodos([...todos, todo]);
+  function pushTodo(text) {
+    const newTodo = {
+      text,
+      isCompleted: false,
+      id: uuidv4(),
+    };
+    setTodos([...todos, newTodo]);
   }
 
-  function deleteTodo(todoIndex) {
-    setTodos(todos.filter((_, index) => index !== todoIndex));
+  function deleteTodo(todoId) {
+    setTodos(todos.filter((todo) => todo.id !== todoId));
   }
 
   function deleteAllTodos() {
     setTodos([]);
   }
 
-  function handleCompleteClick(todoIndex) {
+  function handleCompleteClick(todoId) {
     setTodos(
-      todos.map((todo, index) =>
-        index === todoIndex
+      todos.map((todo) =>
+        todo.id === todoId
           ? { ...todo, isCompleted: !todo.isCompleted }
           : { ...todo }
       )

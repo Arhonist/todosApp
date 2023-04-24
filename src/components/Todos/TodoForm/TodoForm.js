@@ -4,16 +4,16 @@ import { useTranslation } from 'react-i18next';
 
 function TodoForm({ pushTodo }) {
   const { t } = useTranslation();
-  const [todo, setTodo] = useState({ text: '', isCompleted: false });
+  const [todo, setTodo] = useState('');
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (todo.text.trim() === '') {
+    if (todo.trim() === '') {
       alert(t('alertNotEmpty'));
       return;
     }
     pushTodo(todo);
-    setTodo({ ...todo, text: '' });
+    setTodo('');
   }
 
   return (
@@ -21,9 +21,9 @@ function TodoForm({ pushTodo }) {
       <label>
         <input
           type="text"
-          value={todo.text}
+          value={todo}
           placeholder={t('inputPlaceholder')}
-          onChange={(e) => setTodo({ ...todo, text: e.target.value })}
+          onChange={(e) => setTodo(e.target.value)}
         />
       </label>
       <button type="submit">{t('submitButton')}</button>

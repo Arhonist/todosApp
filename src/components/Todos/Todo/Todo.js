@@ -2,7 +2,7 @@ import { BsTrash3, BsCheckSquare, BsCardList } from 'react-icons/bs';
 import styles from './Todo.module.css';
 import cn from 'classnames';
 
-function Todo({ id, deleteTodo, todo, handleCompleteClick }) {
+function Todo({ deleteTodo, todo, handleCompleteClick }) {
   return (
     <div
       className={cn(styles.todoCard, { [styles.completed]: todo.isCompleted })}
@@ -10,9 +10,9 @@ function Todo({ id, deleteTodo, todo, handleCompleteClick }) {
       <BsCardList className={styles.journalIcon} />
       <BsCheckSquare
         className={styles.icon}
-        onClick={() => handleCompleteClick(id)}
+        onClick={() => handleCompleteClick(todo.id)}
       />
-      <BsTrash3 className={styles.icon} onClick={() => deleteTodo(id)} />
+      <BsTrash3 className={styles.icon} onClick={() => deleteTodo(todo.id)} />
       <p className={styles.cardText}>{todo.text}</p>
     </div>
   );

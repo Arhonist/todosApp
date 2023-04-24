@@ -3,10 +3,9 @@ import Todo from '../Todo/Todo';
 function TodoList({ todos, deleteTodo, handleCompleteClick }) {
   return (
     <>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <Todo
-          key={index}
-          id={index}
+          key={todo.id}
           deleteTodo={deleteTodo}
           todo={todo}
           handleCompleteClick={handleCompleteClick}
