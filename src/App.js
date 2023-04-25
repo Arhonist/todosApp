@@ -57,6 +57,7 @@ function App() {
         {todos.length ? (
           <>
             <TodoActions
+              doComplTodosExist={!!completedCount}
               deleteAllTodos={deleteAllTodos}
               deleteComplTodos={deleteComplTodos}
             />
